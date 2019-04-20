@@ -1,0 +1,28 @@
+<form [formGroup]="userForm" (ngSubmit)="send()">
+
+    <div class="form-group" text-align:center>
+        <label>Name</label>
+        <input type="text required" class="form-control" formControlName="name">
+        <small *ngIf="name.invalid" class="form-text text-danger">enter your name</small>
+    </div>
+
+    <div class="form-group">
+        <label>email</label>
+        <input type="email" class="form-control" formControlName="email">
+        <small *ngIf="email.invalid" class="form-text text-danger">enter your email</small>
+    </div>
+
+    <div class="form-group">
+        <label>dob</label>
+        <input type="text" class="form-control" formControlName="dob" bsDatepicker>
+        <small *ngIf="dob.invalid" class="form-text text-danger">enter you birth date</small>
+    </div>
+    <div class="form-group">
+        <label>phone</label>
+        <input type="text" class="form-control" formControlName="phone" minlength="10" maxlength="10">
+        <small *ngIf="phone.invalid" class="form-text text-danger">enter your phone number</small>
+    </div>
+
+    <button class="btn btn-primary" type="submit">submit</button>
+
+</form>
